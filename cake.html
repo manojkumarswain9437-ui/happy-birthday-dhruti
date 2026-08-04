@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🎂 Make a Birthday Wish ❤️</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+body{
+
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(135deg,#ffd6e7,#fff0f5);
+overflow:hidden;
+
+}
+
+.container{
+
+text-align:center;
+
+}
+
+#cake{
+
+width:320px;
+
+animation:float 3s ease-in-out infinite;
+
+}
+
+h1{
+
+margin-top:20px;
+
+color:#ff2f7d;
+
+font-size:55px;
+
+}
+
+button{
+
+margin-top:30px;
+
+padding:18px 45px;
+
+border:none;
+
+border-radius:50px;
+
+background:white;
+
+color:#ff2f7d;
+
+font-size:22px;
+
+cursor:pointer;
+
+box-shadow:0 12px 30px rgba(255,105,180,.4);
+
+}
+
+#message{
+
+display:none;
+
+margin-top:35px;
+
+font-size:34px;
+
+font-weight:bold;
+
+color:#ff2f7d;
+
+animation:fadeIn 1s ease;
+
+}
+
+.confetti{
+
+position:absolute;
+
+font-size:30px;
+
+animation:fall 5s linear infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:translateY(-100px);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(110vh);
+
+opacity:0;
+
+}
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio id="bgMusic" autoplay loop>
+
+<source src="music/birthday-song.mp3" type="audio/mpeg">
+
+</audio>
+
+<div class="container">
+
+<img
+id="cake"
+src="images/panda3.png">
+
+<h1>🎂 Make a Birthday Wish</h1>
+
+<button id="blowBtn">
+
+🕯️ Blow the Candles
+
+</button>
+
+<div id="message">
+
+🎉 Yay!! Happy Birthday Dhruti ❤️
+
+</div>
+
+</div>
+
+<script>
+
+const btn=document.getElementById("blowBtn");
+
+const msg=document.getElementById("message");
+
+const cake=document.getElementById("cake");
+
+btn.onclick=function(){
+
+cake.src="images/panda4.png";
+
+btn.style.display="none";
+
+msg.style.display="block";
+
+// Confetti
+
+for(let i=0;i<60;i++){
+
+let c=document.createElement("div");
+
+c.className="confetti";
+
+c.innerHTML=["🎉","🎊","💖","🎈"][Math.floor(Math.random()*4)];
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.fontSize=(20+Math.random()*20)+"px";
+
+c.style.animationDuration=(3+Math.random()*3)+"s";
+
+document.body.appendChild(c);
+
+}
+
+setTimeout(()=>{
+
+window.location.href="letter.html";
+
+},5000);
+
+}
+
+</script>
+
+</body>
+
+</html>

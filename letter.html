@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>💌 A Letter For Dhruti ❤️</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+    min-height:100vh;
+
+    padding:40px 0;
+
+    background:linear-gradient(135deg,#ffd6e7,#fff0f5);
+
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+.envelope{
+    width:250px;
+    height:180px;
+    background:#ff6fa5;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:90px;
+    cursor:pointer;
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+.envelope:hover{
+    transform:scale(1.08);
+}
+
+#letter{
+
+display:none;
+
+width:750px;
+max-width:90%;
+
+position:relative;
+z-index:2;
+
+margin-bottom:40px;
+
+background:white;
+
+border-radius:25px;
+
+padding:40px;
+
+text-align:center;
+
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+
+animation:fadeIn 1s ease;
+
+}
+
+#letter h1{
+    font-size:55px;
+
+    color:#ff2f7d;
+
+    margin-bottom:20px;
+    
+
+}
+
+#letter p{
+
+    font-size:22px;
+
+    line-height:40px;
+
+    color:#555;
+
+}
+
+button{
+
+    margin-top:30px;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff2f7d;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+.heart{
+
+position:absolute;
+
+z-index:1;
+
+pointer-events:none;
+
+animation:float 8s linear infinite;
+
+opacity:.6;
+
+}
+@keyframes float{
+
+0%{
+
+transform:translateY(100vh);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh);
+
+opacity:0;
+
+}
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio id="bgMusic" autoplay loop>
+<source src="music/birthday-song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="envelope" id="envelope">
+💌
+</div>
+
+<div id="letter">
+
+    <h1>Happy Birthday Dhruti ❤️</h1>
+
+    <p>
+
+    Dear Dhruti ❤️,
+
+    <br><br>
+
+    Today is your special day, and I hope it brings you endless happiness, laughter, and beautiful memories.
+
+    <br><br>
+
+    Keep smiling, keep shining, and never stop believing in yourself.
+
+    <br><br>
+
+    You deserve all the love, success, and happiness in the world.
+
+    <br><br>
+
+    🎂 Happy Birthday once again!
+
+    <br><br>
+
+    💖 With lots of best wishes.
+
+    </p>
+
+    <button id="nextBtn">
+        📸 View Memories
+    </button>
+
+</div>
+
+<script>
+
+const envelope=document.getElementById("envelope");
+const letter=document.getElementById("letter");
+
+envelope.onclick=function(){
+
+    envelope.style.display="none";
+
+    letter.style.display="block";
+
+}
+
+// Floating hearts
+
+for(let i=0;i<25;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="💖";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(15+Math.random()*20)+"px";
+
+heart.style.animationDuration=(5+Math.random()*5)+"s";
+
+heart.style.animationDelay=Math.random()*5+"s";
+
+document.body.appendChild(heart);
+
+}
+
+document.getElementById("nextBtn").onclick=function(){
+
+window.location.href="gallery.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🎉 Happy Birthday Dhruti ❤️</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffd6e7,#fff0f5);
+    overflow:hidden;
+    font-family:Poppins,sans-serif;
+}
+
+.container{
+    text-align:center;
+    z-index:2;
+}
+
+#panda{
+    width:260px;
+    border-radius:25px;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+h1{
+    font-size:65px;
+    color:#ff2f7d;
+    text-shadow:
+        0 0 10px #ff8fb8,
+        0 0 20px #ff6fa5,
+        0 0 35px #ff2f7d;
+}
+
+p{
+    font-size:28px;
+    color:#555;
+    max-width:800px;
+    margin:auto;
+    line-height:1.7;
+}
+
+.heart,
+.flower,
+.balloon{
+    position:absolute;
+    pointer-events:none;
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="music/birthday-song.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+<img id="panda" src="images/panda8.png">
+
+<h1>🎉 Happy Birthday Dhruti ❤️</h1>
+
+<p>
+
+May your life always be filled with happiness,
+love, success, laughter and beautiful memories.
+
+<br><br>
+
+💖 Stay happy, stay blessed and keep smiling forever.
+
+</p>
+
+</div>
+
+<script src="js/final.js"></script>
+
+</body>
+
+</html>
